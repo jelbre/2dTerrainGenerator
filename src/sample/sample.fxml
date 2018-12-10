@@ -23,10 +23,10 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <Slider fx:id="sldFrequency" majorTickUnit="10.0" min="10.0" minorTickCount="1" prefWidth="422.0" showTickLabels="true" snapToTicks="true" value="50.0" />
+      <Slider fx:id="sldLineSize" majorTickUnit="10.0" min="10.0" minorTickCount="1" prefWidth="422.0" showTickLabels="true" snapToTicks="true" value="50.0" />
       <Slider fx:id="sldAmplitude" majorTickUnit="10.0" minorTickCount="1" showTickLabels="true" snapToTicks="true" value="100.0" GridPane.rowIndex="2" />
       <Canvas fx:id="drawCanvas" height="490.0" width="987.0" GridPane.rowIndex="6" />
-      <Label text="Frequency" GridPane.columnIndex="1" />
+      <Label text="LineSize" GridPane.columnIndex="1" />
       <Label text="Amplitude" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       <Button mnemonicParsing="false" onAction="#UpdateCanvas" text="Update" GridPane.columnIndex="1" GridPane.rowIndex="6" />
       <Slider fx:id="sldLacunatiry" majorTickUnit="0.5" max="8.0" minorTickCount="1" showTickLabels="true" snapToTicks="true" value="2.0" GridPane.rowIndex="1" />

@@ -10,7 +10,7 @@ import java.awt.*;
 
 public class Controller {
     @FXML
-    Slider sldFrequency;
+    Slider sldLineSize;
 
     @FXML
     Slider sldLacunatiry;
@@ -52,7 +52,7 @@ public class Controller {
 
     public double[] getTerrain()
     {
-        int frequency = (int)sldFrequency.getValue();
+        int lineSize = (int)sldLineSize.getValue();
         int lacunarity = (int)sldLacunatiry.getValue();
 
         double amplitude = sldAmplitude.getValue();
@@ -71,7 +71,7 @@ public class Controller {
         }
 
         for (int o = 0; o < octaves; o++) {
-            double[] newPoints = getPerlinLine(amplitude, frequency, width);
+            double[] newPoints = getPerlinLine(amplitude, lineSize, width);
 
             if (yPoints.length == newPoints.length)
             {
@@ -81,7 +81,7 @@ public class Controller {
             }
 
             amplitude *= persistance;
-            frequency /= lacunarity;
+            lineSize /= lacunarity;
         }
         return yPoints;
     }
@@ -92,18 +92,18 @@ public class Controller {
         return pa * (1 - f) + pb * f;
     }
 
-    public double[] getPerlinLine(double amplitude, double frequency, int width) {
+    public double[] getPerlinLine(double amplitude, double lineSize, int width) {
         double a = Math.random();
         double b = Math.random();
         double[] pos = new double[width];
 
         for (int x = 0; x < width; x++) {
-            if (x % frequency == 0) {
+            if (x % lineSize == 0) {
                 a = b;
                 b = Math.random();
                 pos[x] = a * amplitude;
             } else {
-                pos[x] = Interpolate(a, b, (x % frequency) / frequency) * amplitude;
+                pos[x] = Interpolate(a, b, (x % lineSize) / lineSize) * amplitude;
             }
         }
 
