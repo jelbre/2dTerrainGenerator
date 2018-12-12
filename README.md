@@ -12,3 +12,5 @@ Amplitude: The height that the terrain can reach.
 Persistance: The factor at which the Amplitude reduces for each octave. The higher the persistance, the less influence the higher Octaves will have on the Amplitude. 
 
 Octaves: A line gets generated for each octave using the corresponding LineSizes and Amplitudes based on the Lacunarity and Persistance. The generated lines will then get combined to form one final terrain line. The higher the octave count is, the more detail the terrain will get.
+
+Even though the algorithms on its own are not of my creation, I am quite proud to have implemented it in a way that it could easily be used in other java projects of mine.
